@@ -16,9 +16,11 @@ code {
   display: inline-block;
   padding: 30px 60px;
   background: #f4f4f4;
+  border: 1px solid black;
   border-radius: 8px;
   font-weight: normal;
   margin-bottom: 10px;
+  color: blue;
 }
 .subtitle {
   display: inline-block;
