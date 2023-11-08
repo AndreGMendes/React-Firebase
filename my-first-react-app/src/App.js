@@ -28,7 +28,13 @@ function App() {
       )}
       {!showEvents && (
         <div>
-          <button onClick={() => {return setShowEvents(true)}}>Show Events</button>
+          <button
+            onClick={() => {
+              return setShowEvents(true);
+            }}
+          >
+            Show Events
+          </button>
         </div>
       )}
       {showEvents &&
