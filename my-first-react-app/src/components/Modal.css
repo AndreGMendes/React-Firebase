@@ -7,9 +7,12 @@
   background: rgba(0,0,0,0.5);
 }
 .modal {
+  /* position: "fixed"; */
   padding: 30px;
   max-width: 480px;
-  margin: 200px auto;
+  margin: 300px auto;
+  left:80px; 
+  top:20px;
   background: #fff;
   border-radius: 10px;
 }
