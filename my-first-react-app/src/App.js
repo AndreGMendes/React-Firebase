@@ -22,12 +22,23 @@ function App() {
     setShowModal(false)
   }
 
+  const handleOpen = () => {
+    setShowModal(true)
+  }
+
+
   const subtitle = "All the latest events in Marioland"
 
   return (
     <div className="App">
       <Title title="Marioland Events" subtitle={subtitle} />
       
+      <React.Fragment style={{ display:"flex", alignItems:"center", justifyContent:"center"}}>
+        <div className="container">
+          {!showModal && <button onClick={handleOpen} style={{color:"red", marginBottom: "20px"}}>Show Modal</button>}
+        </div>
+      </React.Fragment>
+
       {showEvents && (
         <div>
           <button onClick={() => setShowEvents(false)}>Hide Events</button>
@@ -46,11 +57,12 @@ function App() {
       ))}
 
       {showModal && (
-        <Modal handleClose={handleClose}>
+        <Modal handleCloseProperty={handleClose}>
           <h2>Terms and Conditions</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error odit nam et reprehenderit quibusdam temporibus officia dolorum quo sint nemo quis, laborum, quasi nisi fugit praesentium debitis repudiandae! Sapiente, omnis.</p>
         </Modal>
       )}
+
     </div>
   );
 }
