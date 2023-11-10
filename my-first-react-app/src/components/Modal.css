@@ -13,3 +13,8 @@
   background: #fff;
   border-radius: 10px;
 }
+
+/* All the h3 inside the Modal */
+.modal h3 { 
+  color:deeppink;
+}
