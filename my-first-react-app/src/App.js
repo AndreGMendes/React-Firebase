@@ -56,7 +56,7 @@ function App() {
       ))}
 
       {showModal && (
-        <Modal handleCloseProperty={ () => handleShowButton(false)}>
+        <Modal handleShowButtonProperty={ () => handleShowButton(false)}>
           <h2>Terms and Conditions</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error odit nam et reprehenderit quibusdam temporibus officia dolorum quo sint nemo quis, laborum, quasi nisi fugit praesentium debitis repudiandae! Sapiente, omnis.</p>
         </Modal>
