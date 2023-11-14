@@ -11,7 +11,7 @@ export default function TripList() {
     <div className="trip-list">
       <h2>Trip List</h2>
       {isPending && <div>Loading trips...</div>}
-      {hasError&& <div>Can't access API</div>}
+      {hasError&& <div style = {{color:"red"}} ><span style={{fontWeight: "bold"}}> Can't access API!</span> - {hasError}</div>}
       <ul>
         {trips && trips.map(trip => (
           <li key={trip.id}>
