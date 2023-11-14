@@ -36,7 +36,7 @@ function App() {
         {cards.map(card => (
           <SingleCard 
             key={card.id}
-            card={card}
+            cardProp={card}
           />
         ))}
       </div>
