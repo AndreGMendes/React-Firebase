@@ -1,18 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
-export const useFetch = (url) => {
+export const useFetch = (url, _options) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+
+
+  // Use useRef tyo wrap an Object/array argument
+  // which is a useEffect dependency
+  const options = useRef(_options).current
+
+  useEffect(() => { 
+
+    console.log(options);
+    const controller = new AbortController();
+
     const fetchData = async () => {
       setIsPending(true);
 
       try {
         await new Promise((resolve) => setTimeout(resolve, 1000)); // THis is just to simulate the delay in accessing a DB
 
-        const res = await fetch(url);
+        const res = await fetch(url, {signal: controller.signal});
         
         if (!res.ok) {
           throw new Error (res.statusText);
@@ -24,19 +34,33 @@ export const useFetch = (url) => {
         setData(data);
         setError(null);
       } catch (error) {
-        setError(`${error.message} (Could not fetch the Data)`);
-        console.log(error.message);
-        setIsPending(false);
+
+        if (error.name === 'AbortError') {
+          console.log('The fetch was aborted')
+        
+        
+        } else {
+
+          setError(`${error.message} (Could not fetch the Data)`);
+          console.log(error.message);
+          setIsPending(false);
+
+        }
+
       }
     };
 
     fetchData();
-  }, [url]);
+
+    return () => controller.abort()
+    
+
+  }, [url, options]);
 
   // return { data, isPending }
   return {
     dataProperty: data,
     pendingProperty: isPending,
-    errorProperty: error,
+    errorProperty: error
   };
 };
