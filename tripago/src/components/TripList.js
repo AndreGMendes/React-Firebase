@@ -27,9 +27,16 @@ export default function TripList() {
         <button onClick={() => setUrl('http://localhost:3000/trips?loc=europe')}>
           European Trips
         </button>
+        <button onClick={() => setUrl('http://localhost:3000/trips?loc=america')}>
+          America Trips
+        </button>
         <button onClick={() => setUrl('http://localhost:3000/trips')}>
           All Trips
         </button>
+        <button onClick={() => setUrl('http://localhost:3000/trips?loc=europe&price=£195')}>
+          Lowest Price Trip
+        </button>
+
       </div>
     </div>
   )
