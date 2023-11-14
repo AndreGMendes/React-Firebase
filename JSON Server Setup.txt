@@ -1,0 +1,17 @@
+// 1 - Install the json server -----> npm i -g json-server  
+
+
+
+// In case you're getting the error
+
+// cannot be loaded because running scripts is disabled on this system
+
+// 2 - in Visual Studio Code:
+
+    // Terminal -> New Terminal
+
+    // There's a drop down arrow on right side of the terminal.  Click that and choose
+
+    // Select Default Profile -> Command Prompt
+
+// 3 - Start the Server -----> json-server --watch ./data/db.json
