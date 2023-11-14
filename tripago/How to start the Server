@@ -1,0 +1,15 @@
+
+
+// In case you're getting the error
+
+// cannot be loaded because running scripts is disabled on this system
+
+// in Visual Studio Code:
+
+    // Terminal -> New Terminal
+
+    // There's a drop down arrow on right side of the terminal.  Click that and choose
+
+    // Select Default Profile -> Command Prompt
+
+// json-server --watch ./data/db.json
