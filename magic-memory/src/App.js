@@ -35,15 +35,15 @@ function App() {
 
   // compare 2 selected cards
   useEffect(() => {
-    if (choiceOne && choiceTwo) {
+    if (choiceOne && choiceTwo) {                 // Validates if the user has already choose 2 cards 
 
-      if (choiceOne.src === choiceTwo.src) {
-        setCards(prevCards => {
-          return prevCards.map(card => {
-            if (card.src === choiceOne.src) {
-              return { ...card, matched: true }
+      if (choiceOne.src === choiceTwo.src) {      // Validates if both selected card images match
+        setCards(prevCards => {                   // If so then we need to modify the array of 'cards' by adding a property called 'matched' to all of them. 
+          return prevCards.map(card => {          // So for each card on the array we will check if the image is the same as the one select in either 'choiceOne' or 'choiceTwo' (It doesn't matter since both at this point are the same)
+            if (card.src === choiceOne.src) {     
+              return { ...card, matched: true }   // For the cards in the Array (card.src) that match the 'choiceOne.src' or 'choiceTwo.src', the 'match' property is set to 'true'
             } else {
-              return card
+              return card                         // If cards don't match, the 'match' property remains the default which is 'false'
             }
           })
         })
