@@ -35,7 +35,7 @@ function App() {
 
   // compare 2 selected cards
   useEffect(() => {
-    if (choiceOne && choiceTwo) {                 // Validates if the user as already choose 2 cards 
+    if (choiceOne && choiceTwo) {                 // Validates if the user has already choose 2 cards 
 
       if (choiceOne.src === choiceTwo.src) {      // Validates if both selected card images match
         setCards(prevCards => {                   // If so then we need to modify the array of 'cards' by adding a property called 'matched' to all of them. 
